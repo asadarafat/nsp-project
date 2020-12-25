@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5f69d232-7228-45f7-9469-654275b187c4" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XIBv7YzMASIlhcPHwXrfVToq07" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings>
+        <option name="useSoftWraps" value="true" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.nsp-deviceAdmin-container">
+    <configuration name="Linux-netmiko" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="NSP-project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Linux-netmiko.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="kafka-importer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="NSP-project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/kafka-importer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="nsp-deviceAdmin-container" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="NSP-project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/nsp-deviceAdmin-container.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="nsp-deviceAdmin" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="NSP-project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/nsp-deviceAdmin.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sandbox" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="NSP-project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sandbox.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.nsp-deviceAdmin-container" />
+        <item itemvalue="Python.sandbox" />
+        <item itemvalue="Python.nsp-deviceAdmin" />
+        <item itemvalue="Python.Linux-netmiko" />
+        <item itemvalue="Python.kafka-importer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5f69d232-7228-45f7-9469-654275b187c4" name="Default Changelist" comment="" />
+      <created>1580723955587</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580723955587</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="352" height="644" key="GridCell.Tab.0.bottom" timestamp="1605932773901">
+      <screen x="0" y="23" width="1680" height="983" />
+    </state>
+    <state width="352" height="466" key="GridCell.Tab.0.bottom/0.23.1680.960@0.23.1680.960" timestamp="1605190213381" />
+    <state width="352" height="466" key="GridCell.Tab.0.bottom/0.23.1680.961@0.23.1680.961" timestamp="1605189058584" />
+    <state width="352" height="466" key="GridCell.Tab.0.bottom/0.23.1680.963@0.23.1680.963" timestamp="1605191974770" />
+    <state width="352" height="466" key="GridCell.Tab.0.bottom/0.23.1680.965@0.23.1680.965" timestamp="1605197182263" />
+    <state width="352" height="466" key="GridCell.Tab.0.bottom/0.23.1680.966@0.23.1680.966" timestamp="1605196104575" />
+    <state width="352" height="644" key="GridCell.Tab.0.bottom/0.23.1680.967@0.23.1680.967" timestamp="1605289470963" />
+    <state width="352" height="644" key="GridCell.Tab.0.bottom/0.23.1680.972@0.23.1680.972" timestamp="1605369356819" />
+    <state width="352" height="644" key="GridCell.Tab.0.bottom/0.23.1680.983@0.23.1680.983" timestamp="1605932773901" />
+    <state width="352" height="644" key="GridCell.Tab.0.center" timestamp="1605932773899">
+      <screen x="0" y="23" width="1680" height="983" />
+    </state>
+    <state width="352" height="466" key="GridCell.Tab.0.center/0.23.1680.960@0.23.1680.960" timestamp="1605190213380" />
+    <state width="352" height="466" key="GridCell.Tab.0.center/0.23.1680.961@0.23.1680.961" timestamp="1605189058581" />
+    <state width="352" height="466" key="GridCell.Tab.0.center/0.23.1680.963@0.23.1680.963" timestamp="1605191974770" />
+    <state width="352" height="466" key="GridCell.Tab.0.center/0.23.1680.965@0.23.1680.965" timestamp="1605197182262" />
+    <state width="352" height="466" key="GridCell.Tab.0.center/0.23.1680.966@0.23.1680.966" timestamp="1605196104569" />
+    <state width="352" height="644" key="GridCell.Tab.0.center/0.23.1680.967@0.23.1680.967" timestamp="1605289470962" />
+    <state width="352" height="644" key="GridCell.Tab.0.center/0.23.1680.972@0.23.1680.972" timestamp="1605369356818" />
+    <state width="352" height="644" key="GridCell.Tab.0.center/0.23.1680.983@0.23.1680.983" timestamp="1605932773899" />
+    <state width="352" height="644" key="GridCell.Tab.0.left" timestamp="1605932773898">
+      <screen x="0" y="23" width="1680" height="983" />
+    </state>
+    <state width="352" height="466" key="GridCell.Tab.0.left/0.23.1680.960@0.23.1680.960" timestamp="1605190213380" />
+    <state width="352" height="466" key="GridCell.Tab.0.left/0.23.1680.961@0.23.1680.961" timestamp="1605189058580" />
+    <state width="352" height="466" key="GridCell.Tab.0.left/0.23.1680.963@0.23.1680.963" timestamp="1605191974769" />
+    <state width="352" height="466" key="GridCell.Tab.0.left/0.23.1680.965@0.23.1680.965" timestamp="1605197182260" />
+    <state width="352" height="466" key="GridCell.Tab.0.left/0.23.1680.966@0.23.1680.966" timestamp="1605196104568" />
+    <state width="352" height="644" key="GridCell.Tab.0.left/0.23.1680.967@0.23.1680.967" timestamp="1605289470962" />
+    <state width="352" height="644" key="GridCell.Tab.0.left/0.23.1680.972@0.23.1680.972" timestamp="1605369356817" />
+    <state width="352" height="644" key="GridCell.Tab.0.left/0.23.1680.983@0.23.1680.983" timestamp="1605932773898" />
+    <state width="352" height="644" key="GridCell.Tab.0.right" timestamp="1605932773900">
+      <screen x="0" y="23" width="1680" height="983" />
+    </state>
+    <state width="352" height="466" key="GridCell.Tab.0.right/0.23.1680.960@0.23.1680.960" timestamp="1605190213381" />
+    <state width="352" height="466" key="GridCell.Tab.0.right/0.23.1680.961@0.23.1680.961" timestamp="1605189058583" />
+    <state width="352" height="466" key="GridCell.Tab.0.right/0.23.1680.963@0.23.1680.963" timestamp="1605191974770" />
+    <state width="352" height="466" key="GridCell.Tab.0.right/0.23.1680.965@0.23.1680.965" timestamp="1605197182262" />
+    <state width="352" height="466" key="GridCell.Tab.0.right/0.23.1680.966@0.23.1680.966" timestamp="1605196104571" />
+    <state width="352" height="644" key="GridCell.Tab.0.right/0.23.1680.967@0.23.1680.967" timestamp="1605289470963" />
+    <state width="352" height="644" key="GridCell.Tab.0.right/0.23.1680.972@0.23.1680.972" timestamp="1605369356818" />
+    <state width="352" height="644" key="GridCell.Tab.0.right/0.23.1680.983@0.23.1680.983" timestamp="1605932773900" />
+    <state x="582" y="350" key="com.intellij.ide.util.TipDialog" timestamp="1608826855343">
+      <screen x="0" y="23" width="1680" height="973" />
+    </state>
+    <state x="582" y="351" key="com.intellij.ide.util.TipDialog/0.23.1680.961@0.23.1680.961" timestamp="1605188873132" />
+    <state x="582" y="354" key="com.intellij.ide.util.TipDialog/0.23.1680.966@0.23.1680.966" timestamp="1601136150969" />
+    <state x="582" y="349" key="com.intellij.ide.util.TipDialog/0.23.1680.967@0.23.1680.967" timestamp="1606801911766" />
+    <state x="582" y="350" key="com.intellij.ide.util.TipDialog/0.23.1680.973@0.23.1680.973" timestamp="1608826855342" />
+    <state x="582" y="351" key="com.intellij.ide.util.TipDialog/0.23.1680.974@0.23.1680.974" timestamp="1606467973689" />
+    <state x="582" y="351" key="com.intellij.ide.util.TipDialog/0.23.1680.976@0.23.1680.976" timestamp="1607663696707" />
+    <state x="582" y="358" key="com.intellij.ide.util.TipDialog/0.23.1680.978@0.23.1680.978" timestamp="1600789416211" />
+    <state x="582" y="358" key="com.intellij.ide.util.TipDialog/0.23.1680.980/-1920.23.1920.1057@0.23.1680.980" timestamp="1600239055792" />
+    <state x="505" y="70" width="670" height="676" key="search.everywhere.popup" timestamp="1605196859245">
+      <screen x="0" y="23" width="1680" height="965" />
+    </state>
+    <state x="505" y="70" width="670" height="676" key="search.everywhere.popup/0.23.1680.965@0.23.1680.965" timestamp="1605196859245" />
+  </component>
+</project>
