@@ -1,0 +1,23 @@
+################################################################################
+# NAME
+#   IO_pathProfile.yaml
+#
+# DESCRIPTION
+#   This file contains IP Optim, Path Profile
+#
+# HISTORY
+#   dd-mm-yyyy - author       - comment
+#   06-01-2021 - Asad Arafat - Creation
+################################################################################
+# list of users in YAML Format:
+---
+data:
+  bidirection: SYMMETRIC_LOOSE
+  disjoint: 'NO'
+  explicitRouteStrategy: STANDARD
+  maxCost: 0
+  maxHops: 0
+  maxTeMetric: 0
+  name: PCC_102_Loose_fromRestApi
+  objective: TE_METRIC
+  profileId: 102

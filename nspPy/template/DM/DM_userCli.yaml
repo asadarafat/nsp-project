@@ -1,0 +1,7 @@
+type: CliUser
+dto:
+  userName: admin
+  description: CliUserPushedFromRestAPI
+  password: admin
+  preLoginUserName: blart
+  preLoginPassword: blart

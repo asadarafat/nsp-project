@@ -1,0 +1,5 @@
+type: GrpcUser
+dto:
+  userName: admin
+  description: GRPC user object for SROS
+  password: admin

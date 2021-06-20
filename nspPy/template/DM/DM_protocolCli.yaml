@@ -1,0 +1,6 @@
+type: CliProtocol
+dto:
+  protocolName: CliProtocolViaREST
+  commProtocol: SSH2
+  port: '22'
+  connectTimeout: '3000'

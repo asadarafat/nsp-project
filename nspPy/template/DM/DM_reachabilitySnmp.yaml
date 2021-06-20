@@ -1,0 +1,7 @@
+type: NeReachabilityPolicy
+dto:
+  name: SnmpReachability
+  interval: '2'
+  timeout: '1'
+  adminState: up
+  reachabilityType: snmp

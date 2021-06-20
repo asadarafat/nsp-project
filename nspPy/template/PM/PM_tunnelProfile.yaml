@@ -1,0 +1,43 @@
+################################################################################
+# NAME
+#   PM_tunnelProfile.yaml
+#
+# DESCRIPTION
+#   This file contains IP Optim, Path Profile
+#
+# HISTORY
+#   dd-mm-yyyy - author       - comment
+#   05-03-2021 - Asad Arafat - Creation
+################################################################################
+# list of users in YAML Format:
+---
+data:
+  appId:
+  name: asad_tunnel_profile
+  objectDescription:
+  bgpPriority: 5
+  grePriority: 6
+  ldpPriority: 4
+  looseRsvpPriority: 9
+  strictRsvpPriority: 0
+  pccInitiatedRsvpPriority: 1
+  looseSrTePriority: 10
+  strictSrTePriority: 7
+  srIsisPriority: 2
+  srOspfPriority: 3
+  pccInitiatedSrTePriority: 8
+  canCreateNewTunnel: true
+  canBookBwInCoreForEline: false
+  canRebindTunnel: false
+  canResizeExistingTunnel: false
+  canUseExistingTunnel: false
+  shouldAvoidOperStateDown: false
+  igpConnectivityRequiredDuringPathSelection: true
+  pccInitiatedLspEnabled: false
+  consumable: true
+  deletable: true
+  modifiable: true
+  protection: true
+  frrEnabled: true
+  protectionType: STANDBY
+  portFilter:

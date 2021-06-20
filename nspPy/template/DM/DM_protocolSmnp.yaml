@@ -1,0 +1,8 @@
+type: SnmpProtocol
+dto:
+  protocolName: SnmpProtocolViaREST
+  port: '161'
+  timeout: '10'
+  securityModel: snmpv2c
+  retries: '3'
+  description: SrosSnmpUserPushedFromRestAPI

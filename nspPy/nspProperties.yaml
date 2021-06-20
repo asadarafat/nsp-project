@@ -1,0 +1,17 @@
+################################################################################
+# NAME
+#   nspProperties.yaml
+#
+# DESCRIPTION
+#   This file contains NSP properties
+#
+# HISTORY
+#   dd-mm-yyyy - author       - comment
+#   06-01-2021 - Asad Arafat - Creation
+################################################################################
+# list of users in YAML Format:
+- IP: 172.23.160.31  # API gateway
+  username:  admin
+  password:  NokiaNsp1!
+  IPsdn: 172.23.160.33
+

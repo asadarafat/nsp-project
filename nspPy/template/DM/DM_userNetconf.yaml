@@ -1,0 +1,5 @@
+type: NetconfUser
+dto:
+  userName: admin
+  description: NetconfUserPushedFromRestAPI
+  password: admin

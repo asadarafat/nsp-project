@@ -1,0 +1,8 @@
+type: GrpcProtocol
+dto:
+  protocolName: SROSGrpcProtocolViaREST
+  port: '57400'
+  secure: 'false'
+  connectTimeout: '20'
+  keepaliveInterval: '10'
+  keepaliveTimeout: '22022'

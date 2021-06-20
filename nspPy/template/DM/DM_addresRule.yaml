@@ -1,0 +1,18 @@
+################################################################################
+# NAME
+#   nspProperties.yaml
+#
+# DESCRIPTION
+#   This file contains Device Manager, Address Rule properties
+#
+# HISTORY
+#   dd-mm-yyyy - author       - comment
+#   06-01-2021 - Asad Arafat - Creation
+################################################################################
+# list of users in YAML Format:
+---
+type: IpAddrRule
+dto:
+  ipaddress: 10.10.10.11
+  maskBits: '32'
+  filterType: include

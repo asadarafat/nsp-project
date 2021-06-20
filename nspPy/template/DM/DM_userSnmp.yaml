@@ -1,0 +1,5 @@
+type: SnmpUser
+dto:
+  userName: admin
+  description: PushedFromRestAPI
+  community: private

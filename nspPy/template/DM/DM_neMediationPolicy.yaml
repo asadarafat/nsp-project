@@ -1,0 +1,18 @@
+type: NeMediationPolicy
+dto:
+  policyName: "<NAME>"
+  policyType: "<SNMP-NETCONF-GRPC-CLI>"
+  description: PushedFromRestAPI
+  user:
+    dto:
+      fdn:
+        scheme: model
+        namespace: mediationpolicy
+        fdn: "<USER>"
+  neCommProtocol:
+    dto:
+      fdn:
+        scheme: model
+        namespace: mediationpolicy
+        fdn: "<PROTOCOL>"
+  readOnlyNes: []

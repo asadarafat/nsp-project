@@ -1,0 +1,75 @@
+################################################################################
+# NAME
+#   DM_discoveryRule.yaml
+#
+# DESCRIPTION
+#   This file contains Device Manager, Discovery Rule properties
+#
+# HISTORY
+#   dd-mm-yyyy - author       - comment
+#   21-01-2021 - Asad Arafat - Creation
+################################################################################
+# list of users in YAML Format:
+---
+type: NeDiscRule
+dto:
+  name: SrSnmpDiscoveryRuleWithNetconf
+  description: SrosDiscoveryRuleViaSnmpAndNetconfCLIandGrpc
+  scanInterval: '60'
+  adminState: up
+  operState: active
+  orderDiscovery:
+    '1': SNMP
+    '2': NETCONF
+    '3': CLI
+    '4': GRPC
+  ipAddrRules:
+  - scheme: model
+    namespace: necontrol
+    fdn: "{{IpAddrRuleSr}}"
+  neROMedPolicies:
+  - scheme: model
+    namespace: mediationpolicy
+    fdn: "{{NeMediationPolicySnmpSr}}"
+  - scheme: model
+    namespace: mediationpolicy
+    fdn: "{{NeMediationPolicyNetconfSr}}"
+  - scheme: model
+    namespace: mediationpolicy
+    fdn: "{{NeMediationPolicyCliSr}}"
+  - scheme: model
+    namespace: mediationpolicy
+    fdn: "{{NeMediationPolicyGrpciSr}}"
+  neRWMedPolicies:
+  - scheme: model
+    namespace: mediationpolicy
+    fdn: "{{NeMediationPolicySnmpSr}}"
+  - scheme: model
+    namespace: mediationpolicy
+    fdn: "{{NeMediationPolicyNetconfSr}}"
+  - scheme: model
+    namespace: mediationpolicy
+    fdn: "{{NeMediationPolicyCliSr}}"
+  - scheme: model
+    namespace: mediationpolicy
+    fdn: "{{NeMediationPolicyGrpcSr}}"
+  neTrapMedPolicies:
+  - scheme: model
+    namespace: mediationpolicy
+    fdn: "{{NeMediationPolicySnmpSr}}"
+  - scheme: model
+    namespace: mediationpolicy
+    fdn: "{{NeMediationPolicyNetconfSr}}"
+  - scheme: model
+    namespace: mediationpolicy
+    fdn: "{{NeMediationPolicyCliSr}}"
+  - scheme: model
+    namespace: mediationpolicy
+    fdn: "{{NeMediationPolicyGrpcSr}}"
+  neReachabilityPolicies:
+  - scheme: model
+    namespace: necontrol
+    fdn: "{{NePingReachabilityPolicySr}}"
+  - scheme: model
+    namespace: necontrol
+    fdn: "{{NeSnmpReachabilityPolicySr}}"

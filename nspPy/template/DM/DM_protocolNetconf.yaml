@@ -1,0 +1,8 @@
+type: NetconfProtocol
+dto:
+  protocolName: NetconfProtocolViaREST
+  transportProtocol: SSH2
+  port: '830'
+  connectTimeout: '10'
+  readTimeout: '10'
+  retries: '3'
