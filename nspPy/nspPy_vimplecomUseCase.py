@@ -21,7 +21,6 @@ import nspPy_ipOptim
 import nspPy_session
 from jsonpath_ng import jsonpath, parse
 import CM_Log
-import pandas
 
 
 class vimplecom(object):
