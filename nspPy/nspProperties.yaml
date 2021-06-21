@@ -10,8 +10,13 @@
 #   06-01-2021 - Asad Arafat - Creation
 ################################################################################
 # list of users in YAML Format:
-- IP: 172.23.160.31  # API gateway
+### Nirvana
+# - IP: 172.23.160.31  # API gateway
+#   username:  admin
+#   password:  NokiaNsp1!
+#   IPsdn: 172.23.160.33
+##
+- IP: 10.58.22.244  # API gateway
   username:  admin
   password:  NokiaNsp1!
-  IPsdn: 172.23.160.33
-
+  IPsdn: 10.58.22.244

@@ -23,8 +23,8 @@ class gnmiHelper(object):
         with gNMIclient(target=host, username='admin', password='admin', insecure=True) as gc:
              ## result = gc.get(path=['openconfig-interfaces:interfaces', 'openconfig-acl:acl'])
              ## result = gc.capabilities()
+            ## result = gc.get(path=['/state/router/bgp/rib/label-ipv4/label-ipv4-statistics/prefix'])
             result = gc.get(path=['/state/router/bgp/rib/label-ipv4/label-ipv4-statistics/prefix'])
-            
         
         print (json.dumps(result, indent=4, sort_keys=True))
 
