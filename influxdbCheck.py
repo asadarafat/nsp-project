@@ -1,6 +1,5 @@
 
-from influxdb import InfluxDBClient
-
+import influxdb_client
 
 global ifluxdbIP
 global influxPort

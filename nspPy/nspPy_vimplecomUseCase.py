@@ -26,11 +26,8 @@ import CM_Log
 class vimplecom(object):
     def __init__(self):
         self.pathProfileData            = None
-    
-    def jsonToExcel(self, jsonContainer, excelFile):
-        pandas.DataFrame(jsonContainer).to_excel(excelFile)
 
-    
+
 
 def UT_vimplecom():
     x = nspPy_session.nspPy_session()
@@ -41,10 +38,7 @@ def UT_vimplecom():
     
     ip = nspPy_ipOptim.ipOptim()
     lspList = ip.getLspPath(urlHost,token)
-
-    vmplcm = vimplecom()
-    vmplcm.jsonToExcel(lspList, 'lspList.xlsx')
-
+    pprint (lspList)
 
     x.revokeRestToken()
 
@@ -53,3 +47,6 @@ def UT_vimplecom():
 if (__name__ == '__main__'):
     UT_vimplecom()
     print ("asad")
+
+
+

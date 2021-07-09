@@ -16,7 +16,7 @@ import yaml
 import CM_Log
 
 ## Constant
-GLBL_NSP_PROPERTIES_FILENAME = "/Users/aarafat/PycharmProjects/NSP-Project/nspPy/nspProperties.yaml"
+GLBL_NSP_PROPERTIES_FILENAME = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/nspProperties.yaml"
 
 class nspPy_session(object):
     def __init__(self):
@@ -85,6 +85,7 @@ def UT_session():
     x.getRestToken()
     x.revokeRestToken()
 
+    print ('done')
 #
 # Execute main program
 if (__name__ == '__main__'):

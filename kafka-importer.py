@@ -35,7 +35,7 @@ consumer = KafkaConsumer(kafkaTopic,
 client = InfluxDBClient(host=ifluxdbIP, port=influxPort, username=influxUsername, password=influxPassword)
 client.switch_database('pyexample')
 
-def kafkaToCvs():
+def kafka2influxdb():
     for kafka_message in consumer:
         print('kafka_message_value: ')
         print(kafka_message.value)
