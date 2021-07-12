@@ -38,7 +38,6 @@ def UT_vimplecom():
     
     ip = nspPy_ipOptim.ipOptim()
     lspList = ip.getLspPath(urlHost,token)
-    pprint (lspList)
 
     x.revokeRestToken()
 
@@ -46,7 +45,7 @@ def UT_vimplecom():
 # Execute main program
 if (__name__ == '__main__'):
     UT_vimplecom()
-    print ("asad")
+   # print ("asad")
 
 
 
