@@ -110,6 +110,21 @@ class ipOptim(object):
         CM_Log.info("getLspResponse:\n" + json.dumps(response, indent=4))
         return response
 
+    def getIpLink(self, urlHost,token):
+        #https://{{server}}:8543/sdn/api/map/iplinks
+        url = 'https://' + urlHost  + ':8543/sdn/api/map/iplinks'
+        headers = {
+            'content-type': "application/json",
+            'authorization': "Bearer " + token
+            }
+        payload = {}
+        #payload = json.dumps(self.networksIetfData, indent=4)
+        #CM_Log.info("payload:\n" + payload)
+
+        response = requests.request("GET", url, headers=headers, verify=False, data=payload)
+        response = json.loads(response.text)
+        CM_Log.info("getLspResponse:\n" + json.dumps(response, indent=4))
+        return response
     ## GET
     # Request URL: https://10.58.23.30:8543/sdn/api/v4/template/path-profiles
     # Request Method: GET
@@ -148,7 +163,10 @@ def UT_ipOptim():
     #ip.getNetworksIetf(urlHost,token)
 
     ## get network LSP
-    ip.getLspPath(urlHost,token)
+    #ip.getLspPath(urlHost,token)
+
+    ## get IP Links
+    ip.getIpLink(urlHost,token)
 
     x.revokeRestToken()
 
