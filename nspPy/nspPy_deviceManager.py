@@ -25,24 +25,24 @@ import nspPy_session
 ## NSP > 20.9
 GLBL_NSP_DEVICE_MANAGER_END_POINT_PORT               = ":8548"
 
-GLBL_NSP_DEVICE_MANAGER_ADDRESS_RULE_FILENAME           = "/Users/aarafat/PycharmProjects/NSP-Project/nspPy/template/DM/DM_addresRule.yaml"
+GLBL_NSP_DEVICE_MANAGER_ADDRESS_RULE_FILENAME           = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_addresRule.yaml"
 
-GLBL_NSP_DEVICE_MANAGER_USER_SNMP_FILENAME              = "/Users/aarafat/PycharmProjects/NSP-Project/nspPy/template/DM/DM_userSnmp.yaml"
-GLBL_NSP_DEVICE_MANAGER_USER_CLI_FILENAME               = "/Users/aarafat/PycharmProjects/NSP-Project/nspPy/template/DM/DM_userCLi.yaml"
-GLBL_NSP_DEVICE_MANAGER_USER_GRPC_FILENAME              = "/Users/aarafat/PycharmProjects/NSP-Project/nspPy/template/DM/DM_userGrpc.yaml"
-GLBL_NSP_DEVICE_MANAGER_USER_NETCONF_FILENAME           = "/Users/aarafat/PycharmProjects/NSP-Project/nspPy/template/DM/DM_userNetconf.yaml"
+GLBL_NSP_DEVICE_MANAGER_USER_SNMP_FILENAME              = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_userSnmp.yaml"
+GLBL_NSP_DEVICE_MANAGER_USER_CLI_FILENAME               = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_userCLi.yaml"
+GLBL_NSP_DEVICE_MANAGER_USER_GRPC_FILENAME              = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_userGrpc.yaml"
+GLBL_NSP_DEVICE_MANAGER_USER_NETCONF_FILENAME           = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_userNetconf.yaml"
 
-GLBL_NSP_DEVICE_MANAGER_PROTOCOL_SNMP_FILENAME          = "/Users/aarafat/PycharmProjects/NSP-Project/nspPy/template/DM/DM_protocolSmnp.yaml"
-GLBL_NSP_DEVICE_MANAGER_PROTOCOL_CLI_FILENAME           = "/Users/aarafat/PycharmProjects/NSP-Project/nspPy/template/DM/DM_protocolCLi.yaml"
-GLBL_NSP_DEVICE_MANAGER_PROTOCOL_GRPC_FILENAME          = "/Users/aarafat/PycharmProjects/NSP-Project/nspPy/template/DM/DM_protocolGrpc.yaml"
-GLBL_NSP_DEVICE_MANAGER_PROTOCOL_NETCONF_FILENAME       = "/Users/aarafat/PycharmProjects/NSP-Project/nspPy/template/DM/DM_protocolNetconf.yaml"
+GLBL_NSP_DEVICE_MANAGER_PROTOCOL_SNMP_FILENAME          = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_protocolSmnp.yaml"
+GLBL_NSP_DEVICE_MANAGER_PROTOCOL_CLI_FILENAME           = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_protocolCLi.yaml"
+GLBL_NSP_DEVICE_MANAGER_PROTOCOL_GRPC_FILENAME          = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_protocolGrpc.yaml"
+GLBL_NSP_DEVICE_MANAGER_PROTOCOL_NETCONF_FILENAME       = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_protocolNetconf.yaml"
 
-GLBL_NSP_DEVICE_MANAGER_NE_MEDIATION_POLICY_FILENAME    = "/Users/aarafat/PycharmProjects/NSP-Project/nspPy/template/DM/DM_neMediationPolicy.yaml"
+GLBL_NSP_DEVICE_MANAGER_NE_MEDIATION_POLICY_FILENAME    = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_neMediationPolicy.yaml"
 
-GLBL_NSP_DEVICE_MANAGER_NE_REACHABILITY_PING_POLICY_FILENAME    = "/Users/aarafat/PycharmProjects/NSP-Project/nspPy/template/DM/DM_reachabilityPing.yaml"
-GLBL_NSP_DEVICE_MANAGER_NE_REACHABILITY_SNMP_POLICY_FILENAME    = "/Users/aarafat/PycharmProjects/NSP-Project/nspPy/template/DM/DM_reachabilitySnmp.yaml"
+GLBL_NSP_DEVICE_MANAGER_NE_REACHABILITY_PING_POLICY_FILENAME    = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_reachabilityPing.yaml"
+GLBL_NSP_DEVICE_MANAGER_NE_REACHABILITY_SNMP_POLICY_FILENAME    = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_reachabilitySnmp.yaml"
 
-GLBL_NSP_DEVICE_MANAGER_DISCOVERY_RULE_FILENAME   = "/Users/aarafat/PycharmProjects/NSP-Project/nspPy/template/DM/DM_discoveryRule.yaml"
+GLBL_NSP_DEVICE_MANAGER_DISCOVERY_RULE_FILENAME   = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_discoveryRule.yaml"
 
 
 class deviceManager(object):
@@ -301,9 +301,12 @@ def UT_deviceManager():
     x.getRestToken()
     token = x.token
     urlHost = x.IP
-    policyPrefix = "SROS"
+    policyPrefix = "SROS-Secure"
+
+
 
     dm = deviceManager()
+    ## Unit Test For Device Manager Resources creation.
     dm.createAddressRule(urlHost, token)
     dm.createUser(urlHost, "snmp", token)
     dm.createUser(urlHost, "cli", token)
@@ -320,11 +323,13 @@ def UT_deviceManager():
     dm.listNeMediationPolicy(policyPrefix, urlHost, token)
     dm.createNeReachabilityPolicy(policyPrefix, urlHost, "ping", token)
     dm.createNeReachabilityPolicy(policyPrefix, urlHost, "snmp", token)
-
     dm.createDiscoveryRule(policyPrefix, urlHost, token)
 
+    ## Unit Test For Listing mediation policy.
+    # dm.listNeMediationPolicy(policyPrefix, urlHost, token)
+
     ## Unit Test For Device Manager Resources Deletion.
-    ## Hard coding the FDN.
+    ## Hard coding the FDN. 
     ## Todo: mechanism to dyamicaly get the FDN from resource listing method.
     ## Deletion of Discovery rule shall take first precedence before deleting other resources. As the other resources cannot be deleted if it attached to the Discovery Rule.
     snmpFdn         = dm.MediationPolicySnmpFdn

@@ -1,0 +1,32 @@
+function getPorts(context) {
+    var neId = context.getInputValues()['target']['neId'];
+    if (!neId) {
+      logger.info("[getPorts] need to select neId first");    
+      return {};
+    }
+
+    var baseURL = "restconf/data/network-device-mgr:network-devices/network-device="+encodeURIComponent(neId)+"/root";
+    var url = "/nokia-state:/state/port?depth=1&fields=port-id";
+
+    var managerInfo = mds.getAllManagersWithDevice(neId).get(0);
+    logger.info(managerInfo); 
+
+    restClient.setProtocol('http');
+    restClient.setIp(managerInfo.getIp());
+    restClient.setPort(managerInfo.getPort());
+    response = utils.restGET(baseURL+url);
+
+    logger.info("[getPorts] restResponse "+JSON.stringify(response));
+    var returnVal = {};
+  
+    if (response) {
+      var searchQuery = context.getSearchQuery();
+      response["nokia-state:port"].forEach(function(port) {
+        var portId = port["port-id"];
+        if (portId.startsWith(searchQuery)) {
+            returnVal[portId] = portId;
+        }
+      })
+    }
+    return returnVal;
+};

@@ -1,0 +1,228 @@
+var RuntimeException = Java.type('java.lang.RuntimeException');
+
+fwkUtils = load({
+    script: resourceProvider.getResource('utils.js'),
+    name: 'fwkUtils'
+});
+utils = new fwkUtils();
+
+function synchronize(input) {
+  var startTS = Date.now(); 
+  
+  var state = input.getNetworkState().name();
+  var config = input.getIntentConfiguration();
+  var target = input.getTarget();
+  var topology = input.getCurrentTopology();
+  var syncResult = synchronizeResultFactory.createSynchronizeResult();
+
+  logger.info("synchronize(" + target + ") in state " + state);
+  logger.info("synchronize(" + target + ") config " + config);
+  logger.info("synchronize(" + target + ") topology " + topology);
+
+  targetList = target.split('#');
+  neId = targetList[0];
+  portId = targetList[1];
+
+  var managerInfo = mds.getAllManagersWithDevice(neId).get(0);
+  restClient.setProtocol('http');
+  restClient.setIp(managerInfo.getIp());
+  restClient.setPort(managerInfo.getPort());
+
+  try {
+    var baseURL = "restconf/data/network-device-mgr:network-devices/network-device="+encodeURIComponent(neId)+"/root";
+    var url = "/nokia-conf:/configure/port="+encodeURIComponent(portId);
+
+    if (state == "active") {
+      if (topology == null) {
+        logger.info("synchronize(" + target + ") first time activation");
+        topology = topologyFactory.createServiceTopology();
+        
+        backup = utils.restGET(baseURL+url);
+        if (backup) {
+          logger.info("synchronize(" + target + ") save port backup");
+          xtrainfo = topologyFactory.createTopologyXtraInfoFrom('backup', JSON.stringify(backup));
+          topology.addXtraInfo(xtrainfo);
+        } else {
+          xtrainfo = topologyFactory.createTopologyXtraInfoFrom('backup', '');
+          topology.addXtraInfo(xtrainfo);
+        }
+        
+        syncResult.setTopology(topology);
+      }
+
+      var data = utils.xml2object(config)['configuration']['port7x50'];
+      data['portId'] = portId;
+      logger.info('mydata ' + JSON.stringify(data));
+
+      var template = resourceProvider.getResource("config.ftl");
+      var body = utilityService.processTemplate(template, data);
+      
+      logger.info('mybody ' + body);
+      
+      utils.restPUT(baseURL+url, body);
+    } else if (state == 'delete') {
+      if (topology != null) {
+        topology.getXtraInfo().forEach(function (item) {
+          if (item.getKey() === 'backup') {
+            backup = item.getValue();
+          }
+        });
+        if (backup != '') {
+          logger.info("synchronize(" + target + ") restore port backup");
+          utils.restPUT(baseURL+url, backup)
+        } else {
+          logger.info("synchronize(" + target + ") delete port config");
+          utils.restDELETE(baseURL+url);
+        }
+      }
+    }
+
+  } catch (e) {
+    syncResult.setSuccess(false);
+    syncResult.setErrorCode("100");
+    syncResult.setErrorDetail(e);
+    return syncResult;
+  }
+
+  var duration = Date.now()-startTS;
+  logger.info("synchronize(" + target + ") finished within "+duration+" ms");
+  
+  syncResult.setSuccess(true);
+  return syncResult;
+};
+
+function onAudit(target, config, svcTopo, adminState) {
+  var startTS = Date.now();
+  var state = adminState.name();
+  logger.info("onAudit(" + target + ") in state " + state);
+  
+  var auditReport = auditFactory.createAuditReport(null, null);
+  
+  targetList = target.split('#');
+  neId = targetList[0];
+  portId = targetList[1];
+
+  var managerInfo = mds.getAllManagersWithDevice(neId).get(0);
+  restClient.setIp(managerInfo.getIp());
+  restClient.setPort(managerInfo.getPort());  
+  
+  try {
+    var baseURL = "restconf/data/network-device-mgr:network-devices/network-device="+encodeURIComponent(neId)+"/root";
+    var url = "/nokia-conf:/configure/port="+encodeURIComponent(portId);
+    
+    var data = utils.xml2object(config)['configuration']['port7x50'];
+    data['portId'] = portId;
+    
+    var template = resourceProvider.getResource("config.ftl");
+    var iCfg = JSON.parse(utilityService.processTemplate(template, data))['nokia-conf:port'][0];
+    var aCfg = utils.restGET(baseURL+url)['nokia-conf:port'][0];
+    
+    utils.audit(aCfg, iCfg, auditReport, 'port '+portId, '');  
+  } catch (e) {
+    auditReport.addMisAlignedObject(auditFactory.createMisAlignedObject(url, false, neId));
+  }
+
+  var duration = Date.now()-startTS;
+  logger.info("onAudit(" + target + ") finished within "+duration+" ms");
+
+  return auditReport;
+};
+
+function getRates(input) {
+  var target = input.getTarget();
+  var delay = utils.xml2object(input.getActionTreeElement())["port7x50:getRates"]['port7x50:duration']['content'];
+  
+  targetList = target.split('#');
+  neId = targetList[0];
+  portId = targetList[1];
+  
+  var managerInfo = mds.getAllManagersWithDevice(neId).get(0);
+  restClient.setIp(managerInfo.getIp());
+  restClient.setPort(managerInfo.getPort());
+
+  var baseURL = "restconf/data/network-device-mgr:network-devices/network-device="+encodeURIComponent(neId)+"/root";
+  var url = "/nokia-state:/state/port="+encodeURIComponent(portId)+"/statistics";
+  
+  response1 = utils.restGET(baseURL+url)["nokia-state:statistics"];
+  java.lang.Thread.sleep(1000*delay);
+  response2 = utils.restGET(baseURL+url)["nokia-state:statistics"];
+
+  inOctets = response2["in-octets"]-response1["in-octets"];
+  outOctets = response2["out-octets"]-response1["out-octets"];
+
+  data = {};
+  data['inRate'] = inOctets / 125 / delay;
+  data['outRate'] = outOctets / 125 / delay;
+  
+  template = resourceProvider.getResource("rates.ftl");
+  rvalue = utilityService.processTemplate(template, data);
+  return rvalue;
+};
+
+function getStateAttributes(input) {
+  var startTS = Date.now();
+
+  var target = input.getTarget();
+  logger.info("getStateAttributes(" + target + ") in state " + state);
+
+  
+  targetList = target.split('#');
+  neId = targetList[0];
+  portId = targetList[1];
+  
+  var managerInfo = mds.getAllManagersWithDevice(neId).get(0);
+  restClient.setIp(managerInfo.getIp());
+  restClient.setPort(managerInfo.getPort());
+
+  var baseURL = "restconf/data/network-device-mgr:network-devices/network-device="+encodeURIComponent(neId)+"/root";
+  var url = "/nokia-state:/state/port="+encodeURIComponent(portId);
+  state = utils.restGET(baseURL+url)['nokia-state:port'][0]['oper-state'];
+  
+  var template = resourceProvider.getResource("state.ftl");
+  rvalue = utilityService.processTemplate(template, {'operState': state});
+
+  var duration = Date.now()-startTS;
+  logger.info("onAudit(" + target + ") finished within "+duration+" ms");
+
+  return rvalue;
+};
+
+function getNodes(context) {
+    var devices = mds.getAllManagedDevicesFrom(['MDC']);
+  
+    var returnVal = {}
+    devices.forEach(function (device) {
+      returnVal[device.getName()] = device.getName();
+    });
+    return returnVal;
+};
+
+function getPorts(context) {
+    var neId = context.getInputValues()['target']['neId'];
+    if (!neId) {
+      logger.info("[getPorts] need to select neId first");    
+      return {};
+    }
+
+    var baseURL = "restconf/data/network-device-mgr:network-devices/network-device="+encodeURIComponent(neId)+"/root";
+    var url = "/nokia-state:/state/port?depth=1&fields=port-id";
+
+    var managerInfo = mds.getAllManagersWithDevice(neId).get(0);
+    restClient.setIp(managerInfo.getIp());
+    restClient.setPort(managerInfo.getPort());
+    response = utils.restGET(baseURL+url);
+
+    logger.info("[getPorts] restResponse "+JSON.stringify(response));
+    var returnVal = {};
+  
+    if (response) {
+      var searchQuery = context.getSearchQuery();
+      response["nokia-state:port"].forEach(function(port) {
+        var portId = port["port-id"];
+        if (portId.startsWith(searchQuery)) {
+            returnVal[portId] = portId;
+        }
+      })
+    }
+    return returnVal;
+};

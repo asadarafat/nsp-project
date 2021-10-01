@@ -160,13 +160,13 @@ def UT_ipOptim():
     #ip.deletePathProfile(pathProfileUuid, urlHost, token)
 
     ## get network Ietf
-    #ip.getNetworksIetf(urlHost,token)
+    ip.getNetworksIetf(urlHost,token)
 
     ## get network LSP
     #ip.getLspPath(urlHost,token)
 
     ## get IP Links
-    ip.getIpLink(urlHost,token)
+    #ip.getIpLink(urlHost,token)
 
     x.revokeRestToken()
 

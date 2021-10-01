@@ -4,5 +4,5 @@ dto:
   port: '57400'
   secure: 'false'
   connectTimeout: '20'
-  keepaliveInterval: '10'
-  keepaliveTimeout: '22022'
+  keepaliveInterval: '360'
+  keepaliveTimeout: '10000'

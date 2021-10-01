@@ -1,0 +1,46 @@
+function getPorts(context) {
+
+    url = "restconf/data/network-device-mgr:network-devices/network-device=${deviceName}/root/nokia-state:/state/port?depth=1";
+    log.info(null, "[MTU-Intent] ****************Value Provider Context* : " + context.getInputValues());
+    try {
+        var input = context.getInputValues()["target"];
+        var deviceName = input.node;
+        var managerConfig = utils.getManagerConfig(deviceName);
+        restClient.setIp(managerConfig['ip']);
+        restClient.setPort(managerConfig['port']);
+        restClient.setProtocol('http');
+        returnVal = {}
+
+        url = utilityService.processTemplate(url, {
+            deviceName: deviceName
+        });
+        log.info(null, "[MTU-Intent] Device Name : " + deviceName);
+        log.info(null, "[MTU-Intent] url : " + url);
+
+        var fetchResult = utils.fetch(deviceName, url);;
+
+
+        log.info(null, "fetchResult: " + JSON.stringify(fetchResult));
+        if (fetchResult.success) {
+            var searchQuery = context.getSearchQuery();
+            fetchResult.msg["nokia-state:port"].forEach(function(port) {
+                var portId = port["port-id"];
+                if (searchQuery) {
+                    if (portId.startsWith(searchQuery)) {
+                        returnVal[portId] = portId;
+                    }
+                } else {
+                    returnVal[portId] = portId;
+                }
+            });
+        }
+
+        return returnVal;
+    } catch (e) {
+        return {
+            "Error": e.message
+        }
+
+    }
+
+}
