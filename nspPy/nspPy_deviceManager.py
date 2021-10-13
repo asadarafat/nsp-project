@@ -25,24 +25,24 @@ import nspPy_session
 ## NSP > 20.9
 GLBL_NSP_DEVICE_MANAGER_END_POINT_PORT               = ":8548"
 
-GLBL_NSP_DEVICE_MANAGER_ADDRESS_RULE_FILENAME           = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_addresRule.yaml"
+GLBL_NSP_DEVICE_MANAGER_ADDRESS_RULE_FILENAME           = "./nspPy/template/DM/DM_addresRule.yaml"
 
-GLBL_NSP_DEVICE_MANAGER_USER_SNMP_FILENAME              = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_userSnmp.yaml"
-GLBL_NSP_DEVICE_MANAGER_USER_CLI_FILENAME               = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_userCLi.yaml"
-GLBL_NSP_DEVICE_MANAGER_USER_GRPC_FILENAME              = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_userGrpc.yaml"
-GLBL_NSP_DEVICE_MANAGER_USER_NETCONF_FILENAME           = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_userNetconf.yaml"
+GLBL_NSP_DEVICE_MANAGER_USER_SNMP_FILENAME              = "./nspPy/template/DM/DM_userSnmp.yaml"
+GLBL_NSP_DEVICE_MANAGER_USER_CLI_FILENAME               = "./nspPy/template/DM/DM_userCLi.yaml"
+GLBL_NSP_DEVICE_MANAGER_USER_GRPC_FILENAME              = "./nspPy/template/DM/DM_userGrpc.yaml"
+GLBL_NSP_DEVICE_MANAGER_USER_NETCONF_FILENAME           = "./nspPy/template/DM/DM_userNetconf.yaml"
 
-GLBL_NSP_DEVICE_MANAGER_PROTOCOL_SNMP_FILENAME          = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_protocolSmnp.yaml"
-GLBL_NSP_DEVICE_MANAGER_PROTOCOL_CLI_FILENAME           = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_protocolCLi.yaml"
-GLBL_NSP_DEVICE_MANAGER_PROTOCOL_GRPC_FILENAME          = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_protocolGrpc.yaml"
-GLBL_NSP_DEVICE_MANAGER_PROTOCOL_NETCONF_FILENAME       = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_protocolNetconf.yaml"
+GLBL_NSP_DEVICE_MANAGER_PROTOCOL_SNMP_FILENAME          = "./nspPy/template/DM/DM_protocolSmnp.yaml"
+GLBL_NSP_DEVICE_MANAGER_PROTOCOL_CLI_FILENAME           = "./nspPy/template/DM/DM_protocolCLi.yaml"
+GLBL_NSP_DEVICE_MANAGER_PROTOCOL_GRPC_FILENAME          = "./nspPy/template/DM/DM_protocolGrpc.yaml"
+GLBL_NSP_DEVICE_MANAGER_PROTOCOL_NETCONF_FILENAME       = "./nspPy/template/DM/DM_protocolNetconf.yaml"
 
-GLBL_NSP_DEVICE_MANAGER_NE_MEDIATION_POLICY_FILENAME    = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_neMediationPolicy.yaml"
+GLBL_NSP_DEVICE_MANAGER_NE_MEDIATION_POLICY_FILENAME    = "./nspPy/template/DM/DM_neMediationPolicy.yaml"
 
-GLBL_NSP_DEVICE_MANAGER_NE_REACHABILITY_PING_POLICY_FILENAME    = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_reachabilityPing.yaml"
-GLBL_NSP_DEVICE_MANAGER_NE_REACHABILITY_SNMP_POLICY_FILENAME    = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_reachabilitySnmp.yaml"
+GLBL_NSP_DEVICE_MANAGER_NE_REACHABILITY_PING_POLICY_FILENAME    = "./nspPy/template/DM/DM_reachabilityPing.yaml"
+GLBL_NSP_DEVICE_MANAGER_NE_REACHABILITY_SNMP_POLICY_FILENAME    = "./nspPy/template/DM/DM_reachabilitySnmp.yaml"
 
-GLBL_NSP_DEVICE_MANAGER_DISCOVERY_RULE_FILENAME   = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/template/DM/DM_discoveryRule.yaml"
+GLBL_NSP_DEVICE_MANAGER_DISCOVERY_RULE_FILENAME   = "./nspPy/template/DM/DM_discoveryRule.yaml"
 
 
 class deviceManager(object):
@@ -302,6 +302,8 @@ def UT_deviceManager():
     token = x.token
     urlHost = x.IP
     policyPrefix = "SROS-Secure"
+
+    print (token)
 
 
 

@@ -11,10 +11,10 @@
 ################################################################################
 # list of users in YAML Format:
 ## Kyvivstar
-- IP: 172.23.160.37  # API gateway
+- IP: 172.23.160.31  # API gateway
   username:  admin
   password:  NokiaNsp1!
-  IPsdn: 172.23.160.30  #API gateway
+  IPsdn: 172.23.160.31  #API gateway
 
 ## SF
 # - IP: 10.58.22.244  # API gateway

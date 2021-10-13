@@ -16,7 +16,7 @@ import yaml
 import CM_Log
 
 ## Constant
-GLBL_NSP_PROPERTIES_FILENAME = "/Users/aarafat/__VSCODE/NSP-Project/nspPy/nspProperties.yaml"
+GLBL_NSP_PROPERTIES_FILENAME = "./nspPy/nspProperties.yaml"
 
 class nspPy_session(object):
     def __init__(self):
@@ -57,6 +57,7 @@ class nspPy_session(object):
 
         except Exception:
             CM_Log.warning("Cannot sent REST request to get token.")
+            CM_Log.warning("Ensure the NSP IP address in nspProperties.yaml config is reacble from the terminal.")
             return False
 
     def revokeRestToken(self):
